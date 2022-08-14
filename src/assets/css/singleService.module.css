@@ -1,0 +1,31 @@
+.singlePicture {
+  height: 70vh;
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.extraInfo {
+  background-color: rgba(236, 234, 234, 0.514);
+  padding: 5px;
+  border-radius: 20px;
+  margin-left: 5px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+.extraInfoText {
+  background-color: aliceblue;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border-radius: 10px;
+  margin: 4px 10px;
+  padding: 8px;
+}
+.infoText {
+  display: inline-block;
+  font-weight: 500;
+}
+.tourDetails {
+  padding: 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border-radius: 10px;
+}

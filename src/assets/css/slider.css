@@ -1,0 +1,9 @@
+.carousel-indicators{
+  padding-bottom: 30px;
+}
+.sliderCaption {
+  background-color: rgba(128, 128, 128, 0.712);
+}
+.imageSlider{
+  height: 80vh;
+}

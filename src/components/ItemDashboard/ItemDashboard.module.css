@@ -1,0 +1,72 @@
+.intro {
+    background-color: #ffebcd;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+    background-image: url('/public/dream-bg.png');
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+  .dashContainer {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  }
+  .taskIconHolder {
+    position: absolute;
+    top: -22px;
+    left: 8px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid gainsboro;
+    border-radius: 7px;
+    width: max-content;
+    background-image: linear-gradient(#f3c37f, #fb9209);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  }
+  .orderIconHolder {
+    position: absolute;
+    top: -22px;
+    left: 8px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid gainsboro;
+    border-radius: 7px;
+    width: max-content;
+    background-image: linear-gradient(#5db460, #49a44c);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  }
+  .incomeIconHolder {
+    position: absolute;
+    top: -22px;
+    left: 8px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid gainsboro;
+    border-radius: 7px;
+    width: max-content;
+    background-image: linear-gradient(#f15f5c, #e53d38);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  }
+  .likeIconHolder {
+    position: absolute;
+    top: -22px;
+    left: 8px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid gainsboro;
+    border-radius: 7px;
+    width: max-content;
+    background-image: linear-gradient(#1dc0d4, #05afc3);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  }
+  .taskIcon {
+    color: rgb(66, 66, 66);
+  }
+  .orderIcon {
+    color: rgb(241, 234, 234);
+  }
+  .incomeIcon {
+    color: rgb(241, 234, 234);
+  }
+  .likeIcon {
+    color: rgb(241, 234, 234);
+  }
+  

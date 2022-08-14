@@ -1,0 +1,22 @@
+.searchContainer {
+    background-color: #6c757d;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 10px;
+  }
+  .searchContainer input {
+    width: 100%;
+    padding: 0px 10px;
+    border-radius: 10px;
+  }
+  .pagination {
+    margin: 30px;
+  }
+  .pagination button {
+    margin-right: 15px;
+    /* padding: 0 5px;  */
+  }
+  .pagination .selected {
+    background-color: rgb(81, 158, 221);
+    color: white;
+  }
