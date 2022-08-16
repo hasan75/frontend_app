@@ -166,8 +166,10 @@ const Home = () => {
           </Link>
         </div>
       </Container>
-      <section classsName='videoContent my-2'>
-        <VideoCOmponent></VideoCOmponent>
+      <section classsName='videoContent my-5'>
+        <Container>
+          <VideoCOmponent></VideoCOmponent>
+        </Container>
       </section>
       <Container mt={3}>
         <Bounce bottom cascade>

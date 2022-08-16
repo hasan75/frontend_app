@@ -4,7 +4,7 @@ import './VideoCOmponent.css';
 
 const VideoCOmponent = () => {
   return (
-    <div className='d-lg-flex video-HTT'>
+    <div className='d-lg-flex video-HTT mb-5'>
       <div className='container'>
         <ReactPlayer
           width='100%'

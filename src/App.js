@@ -1,3 +1,7 @@
+/* 
+This is the main page where all the component should import.
+*/
+
 import appStyle from './App.module.css';
 import './assets/css/main.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -19,6 +23,8 @@ import { useEffect, useState } from 'react';
 import TravelBlog from './components/TravelBlog/TravelBlog';
 
 function App() {
+  //the next block of code is for scrolling up from down.
+
   const [showBtn, setShowBtn] = useState(false);
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -29,12 +35,14 @@ function App() {
       }
     });
   }, []);
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
   };
+
   return (
     <div className='App'>
       <ContextProvider>
