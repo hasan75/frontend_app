@@ -47,17 +47,17 @@ const Product = ({ product }) => {
   //     });
   // }, []);
 
+  //FOR CHECKING AVAILABLE SEATS IN EVENT.
   const packageBookings = bookings.filter((booking) => booking.title === title);
-
   const availableSeats = member - packageBookings.length;
-  console.log(availableSeats, 'seats');
+
+  // console.log(availableSeats, 'seats');
 
   // for date comparison
   let todayDate = new Date();
-
   const eventDate = new Date(product.tour_date);
 
-  // const priceAfterDiscount = parseInt(price);
+  //DISCOUNT PRICE CALCULATION
   const discountedPrice =
     parseInt(price) - parseInt(price) * (parseInt(discount) / 100);
   //console.log();
@@ -78,6 +78,7 @@ const Product = ({ product }) => {
               variant='top'
               src={img}
             />
+            {/* MESSAGE FOR PAST EVENT  */}
             {todayDate >= eventDate ? (
               <div className={productStyle.dateCaution}>
                 <span className='text-danger'>
@@ -94,11 +95,16 @@ const Product = ({ product }) => {
           </div>
           <Card.Body className={productStyle.cardBody}>
             {parseInt(discount) > 0 && (
-              <div className={productStyle.discountContainer}>
-                <h6 className={productStyle.discountText}>
-                  <span className='ms-4'>{discount}% </span>
-                  <br /> Discount
-                </h6>
+              // <div className={productStyle.discountContainer}>
+              //   <h6 className={productStyle.discountText}>
+              //     <span className='ms-4'>{discount}% </span>
+              //     <br /> Discount
+              //   </h6>
+              // </div>
+              <div className={productStyle.discountContain}>
+                <span className={productStyle.discountText}>
+                  <span className='text-bold'>-</span> {discount}%
+                </span>
               </div>
             )}
             <Card.Title className='text-uppercase text-center'>
@@ -109,8 +115,20 @@ const Product = ({ product }) => {
               &nbsp; {from} to {destination} &nbsp;{' '}
               <i className='fas event-icon fa-flag-checkered text-success'></i>
             </Card.Text>
+            <Card.Text
+              className={`${productStyle.smallTexts}  text-center fw-bold `}
+            >
+              <span className='text-primary'> Available Seats:</span>
+              <span
+                className={
+                  availableSeats > 2 ? `text-success ms-1` : `text-warning ms-1`
+                }
+              >
+                {' '}
+                {availableSeats}
+              </span>
+            </Card.Text>
             <Card.Text className='text-center fw-bold '>
-              Budget:
               <span
                 className={
                   !isNaN(discountedPrice)
@@ -134,19 +152,6 @@ const Product = ({ product }) => {
             >
               Date: <span className='text-success'> {tour_date}</span>
             </Card.Text>
-            <Card.Text
-              className={`${productStyle.smallTexts} text-center fw-bold `}
-            >
-              Available Seats:
-              <span
-                className={
-                  availableSeats > 2 ? `text-success ms-1` : `text-warning ms-1`
-                }
-              >
-                {' '}
-                {availableSeats}
-              </span>
-            </Card.Text>
             <hr />
             <Card.Text className={`${productStyle.smallTexts} text-center`}>
               {desc.slice(0, 110)}...
@@ -154,26 +159,30 @@ const Product = ({ product }) => {
             <Card.Text
               className={`${productStyle.smallTexts} text-center fw-bold `}
             >
-              Rating:{' '}
+              {' '}
               <Rating
-                className='text-danger text-center mt-2'
+                className={`${productStyle.ratingColor} text-center mt-2`}
                 initialRating={rating}
                 readonly
                 emptySymbol='far fa-star'
                 fullSymbol='fas fa-star'
               />{' '}
-              {rating} ({totalReview})
+              {rating} ({totalReview}2)
             </Card.Text>
             <Link to={`products/${_id}`}>
-              <button className='btn mt-2 btn-primary me-5'>See Details</button>
+              <button className='mt-2 btn btn-outline-info me-5'>
+                See Details
+              </button>
             </Link>
             {todayDate >= eventDate || availableSeats < 1 ? (
-              <button className='btn mt-2 btn-primary' disabled>
+              <button className='mt-2 btn btn-secondary opacity-25' disabled>
                 Book Now
               </button>
             ) : (
               <Link to={`/placeorder/${_id}`}>
-                <button className='btn mt-2 btn-primary'>Book Now</button>
+                <button className='mt-2 btn btn-outline-success'>
+                  Book Now
+                </button>
               </Link>
             )}
           </Card.Body>

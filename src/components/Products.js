@@ -5,6 +5,7 @@ import Product from './Product.js';
 import Bounce from 'react-reveal/Bounce';
 import Swal from 'sweetalert2';
 import servicesStyle from '../assets/css/services.module.css';
+import { Fade } from 'react-reveal';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -58,7 +59,7 @@ const Products = () => {
         </div>
       ) : (
         <Container className='mb-5'>
-          <Bounce top cascade>
+          <Fade top cascade>
             <h2 className='text-center text-uppercase mt-5 mb-4 feature'>
               Popular Packages
             </h2>
@@ -70,7 +71,7 @@ const Products = () => {
               A superb collection of great and comfortable items of foods &
               other household items to make your life much easier.
             </p>
-          </Bounce>
+          </Fade>
           <div className={`${servicesStyle.searchContainer} my-2`}>
             <input
               type='text'

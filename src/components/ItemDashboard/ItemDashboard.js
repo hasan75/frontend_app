@@ -9,7 +9,7 @@ import useUsers from '../../hooks/useUsers';
 const ItemDashboard = ({ displayName, email }) => {
   const products = useProducts();
   const blogs = useStoryBlogs();
-  const bookings = useBookings();
+  const [bookings] = useBookings();
   const users = useUsers();
 
   //admin users
@@ -21,6 +21,8 @@ const ItemDashboard = ({ displayName, email }) => {
     (personalBook) => personalBook.email === email
   );
 
+  console.log(products);
+
   //   to find total bookin amount
   let totalPrice = bookings.reduce((acc, booking) => {
     return (
@@ -31,6 +33,7 @@ const ItemDashboard = ({ displayName, email }) => {
       )
     );
   }, 0);
+  console.log(totalPrice);
 
   //to find total personal booking amount
   let totalPersonalPrice = personalBookings.reduce((acc, personalBooking) => {

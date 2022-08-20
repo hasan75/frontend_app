@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import AboutPageService from '../components/AboutPageService/AboutPageService';
 import Banner from '../components/Banner/Banner';
 import VideoCOmponent from '../components/VideoCOmponent/VideoCOmponent';
 
@@ -8,7 +9,7 @@ const About = () => {
     <section className='my-3'>
       <Container>
         <Banner></Banner>
-        <VideoCOmponent></VideoCOmponent>
+        <AboutPageService />
       </Container>
     </section>
   );

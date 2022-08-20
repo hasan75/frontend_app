@@ -13,7 +13,7 @@ function AdminRoute(props) {
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
-        console.log(user);
+        // console.log(user);
         setLoading(false);
       });
   }, [email]);

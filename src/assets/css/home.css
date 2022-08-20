@@ -71,6 +71,9 @@
 .feature {
   position: relative;
 }
+.textPackage{
+  margin-top: 20px !important;
+}
 .feature::after {
   position: absolute;
   display: block;

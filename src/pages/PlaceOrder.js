@@ -31,7 +31,7 @@ const PlaceOrder = () => {
   const orderMatched = orders?.find(
     (order) => product.title === order.title && email === order.email
   );
-  console.log(orderMatched);
+  // console.log(orderMatched);
 
   //to place order
   useEffect(() => {

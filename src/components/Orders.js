@@ -132,7 +132,7 @@ const Orders = () => {
           new Date(order.orderDate).toDateString()
     );
     setDisplayOrders(bookingsByRange);
-    console.log(bookingsByRange);
+    // console.log(bookingsByRange);
   };
 
   //to find the total price of the booking

@@ -13,7 +13,6 @@ const SingleReview = (props) => {
           <span>{address}</span>
         </h5>
         <h6>
-          Raging:
           <Rating
             className='text-warning'
             emptySymbol='far fa-star'

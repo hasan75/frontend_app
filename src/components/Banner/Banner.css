@@ -1,4 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&display=swap');
+
 .banner {
   font-size: 58px;
-  background-color: #fcf2f2;
+  /* background-color: #fcf2f2; */
+}
+.text-first{
+  color: #E06D55;
+}
+.textBaundule{
+  color: #468DC4;
+  font-family: 'DynaPuff', cursive;
+}
+.feature-text{
+  font-family: 'DynaPuff', cursive;
+  font-size: 45px;
+}
+.additional-text{
+  color: #181E4B;
+  font-family: 'DynaPuff', cursive;
+}
+.imageAbout{
+  margin-left: 7rem;
 }

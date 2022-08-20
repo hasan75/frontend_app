@@ -25,7 +25,7 @@ const Testimonials = () => {
     <section
       id='reviews'
       style={{ overflow: 'hidden' }}
-      className='testimonials p-md-3'
+      className='testimonials pt-md-3 pb-md-5 ps-md-3 pe-md-3'
     >
       <Fade bottom duration={2500} distance='40px'>
         <div className='my-5 py-4'>

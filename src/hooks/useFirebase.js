@@ -43,7 +43,7 @@ const useFirebase = () => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-        console.log(user);
+        // console.log(user);
         const email = user.email;
         const name = user.displayName;
         console.log(user, email, name);
@@ -58,7 +58,7 @@ const useFirebase = () => {
         setUser(result.user);
         setUserName(name);
         addUserToDB(name, email);
-        console.log(user);
+        // console.log(user);
         history.replace(redirect);
       })
       .catch((error) => {

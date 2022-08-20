@@ -12,7 +12,7 @@ import kaptai from './../assets/images/kaptai-lake.jpg';
 import moynamoti from './../assets/images/Moynamoti.jpg';
 import sajek from './../assets/images/sajek.jpg';
 
-import Bounce from 'react-reveal/Bounce';
+// import Bounce from 'react-reveal/Bounce';
 import Testimonials from '../components/Testimonials.js';
 import VideoCOmponent from '../components/VideoCOmponent/VideoCOmponent.js';
 import TravelBlog from '../components/TravelBlog/TravelBlog.js';
@@ -25,6 +25,7 @@ import {
   faEarthOceania,
   faMountainSun,
 } from '@fortawesome/free-solid-svg-icons';
+import Contact from '../components/Contact/Contact.js';
 
 const Home = () => {
   const products = useProducts();
@@ -57,18 +58,17 @@ const Home = () => {
         </Row>
       </Container>
       <Container className='collections my-5 mx-auto'>
-        <Bounce bottom cascade>
-          <h2 className='text-center feature'>Why Choose Us?</h2>
-        </Bounce>
+        {/* <Bounce bottom cascade> */}
+        <h2 className='text-center feature'>Why Choose Us?</h2>
+        {/* </Bounce> */}
         <p
           style={{ maxWidth: '650px' }}
           className='text-center mb-4 pt-2 mx-auto mt-3'
         >
-          <Bounce>
-            A huge number of companies and educational institutions are our
-            clients. We manages office tours and study tours for these renowned
-            organizations.
-          </Bounce>
+          {/* <Bounce> */}
+          Baundule is a eco-friendly and one of the most experienced tourism
+          management group of Bangladesh.
+          {/* </Bounce> */}
         </p>
         <Row className='mx-0 g-2'>
           <Col className='my-2 ms-0' xs={12} md={6} lg={3}>
@@ -136,14 +136,16 @@ const Home = () => {
         </Row>
       </Container>
       <Container>
-        <Bounce bottom cascade>
-          <h2 className='text-center feature'>MOST POPULAR Packages</h2>
-          <p style={{ maxWidth: '650px' }} className='text-center mx-auto mt-3'>
-            {' '}
-            A great qualitifull tour packages of all kinds of of ours from
-            different zillas of Bangladesh to serve you and your family.
-          </p>
-        </Bounce>
+        {/* <Bounce bottom cascade> */}
+        <h2 className='text-center feature textPackage'>
+          Some of Our Packages
+        </h2>
+        <p style={{ maxWidth: '650px' }} className='text-center mx-auto mt-3'>
+          {' '}
+          Our Tour packages are very well maintained where you can enjoy and
+          learn with a great numbers of package lists.
+        </p>
+        {/* </Bounce> */}
         {!products.length ? (
           <div className='text-center my-5 private-spinner py-5'>
             <Spinner variant='danger' animation='border' role='status'>
@@ -172,14 +174,14 @@ const Home = () => {
         </Container>
       </section>
       <Container mt={3}>
-        <Bounce bottom cascade>
-          <h2 className='text-center feature'>Traveller's Story</h2>
-          <p style={{ maxWidth: '650px' }} className='text-center mx-auto mt-3'>
-            {' '}
-            A great memory shouldn't be forgotten. Some of the finest writings
-            are here to entertain your soul.
-          </p>
-        </Bounce>
+        {/* <Bounce bottom cascade> */}
+        <h2 className='text-center feature'>Traveller's Story</h2>
+        <p style={{ maxWidth: '650px' }} className='text-center mx-auto mt-3'>
+          {' '}
+          A great memory shouldn't be forgotten. Some of the finest writings are
+          here to entertain your soul.
+        </p>
+        {/* </Bounce> */}
         {!blogs.length ? (
           <div className='text-center my-5 private-spinner py-5'>
             <Spinner variant='danger' animation='border' role='status'>
@@ -203,6 +205,7 @@ const Home = () => {
         </div>
       </Container>
       <Testimonials />
+      <Contact />
     </div>
   );
 };

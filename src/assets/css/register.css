@@ -1,7 +1,7 @@
 .register-page {
   min-height: 100vh !important;
   background-image: linear-gradient(#00000049, #0000006e),
-    url("./../images/login.jpg");
+    url("./../images/login.png");
   background-position: center center;
   background-size: 100% 100%;
   background-repeat: no-repeat;

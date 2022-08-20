@@ -1,6 +1,7 @@
 .testimonials {
   background: aliceblue;
   height: 700px;
+   margin-bottom: 4rem !important;
 }
 
 .testimonials > div {

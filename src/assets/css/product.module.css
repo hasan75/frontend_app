@@ -4,6 +4,12 @@
 .smallTexts{
   font-size: .85rem;
 }
+.seats{
+  padding: 5px 10px;
+  background-color: #9bdaff;
+  border-radius: 0px 10px 10px 0px;
+  /* margin: 10px */
+}
 .dateCaution{
   position: absolute;
   top: 70px;
@@ -22,7 +28,7 @@
   font-size: 1.1rem;
   font-weight: 700;
 }
-.discountContainer {
+/* .discountContainer {
   background-color: #9bdaff;
   height: 15.25rem;
   width: 8.5rem;
@@ -40,4 +46,17 @@
   top: 25px;
   right: 55px;
   transform: rotateZ(293deg);
+} */
+.ratingColor{
+  color: #FF5501;
+}
+.discountContain{
+  background-color: #FF5501;
+  position: absolute;
+  padding: 5px 5px;
+  color: white;
+  border-radius: 0 7px 7px 0;
+  top: 80px;
+  left: 0;
+  font-weight: 700;
 }

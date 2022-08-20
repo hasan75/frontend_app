@@ -12,7 +12,7 @@ const Header = () => {
       <Navbar className='navBar' variant='dark' expand='lg'>
         <Container>
           <Navbar.Brand as={Link} to='/'>
-            <img width='80px' height='80px' src={logo} alt='' />
+            <img width='55px' height='55px' src={logo} alt='' />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>

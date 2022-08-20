@@ -13,11 +13,15 @@ const Orders = () => {
   const [displayOrders, setDisplayOrders] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const todayDate = new Date().toLocaleDateString();
+
   // for printing pdf
   const componentRef = useRef();
 
   //for printing invoice
   const invoiceRef = useRef();
+
+  console.log(orders);
 
   useEffect(() => {
     fetch(`http://localhost:5001/orders?email=${email}`)
@@ -174,171 +178,164 @@ const Orders = () => {
 
                       {/* the invisible table  */}
                       <div style={{ display: 'none' }}>
-                        <Table ref={invoiceRef} responsive>
-                          <thead className='bg-light'>
-                            <tr>
-                              <th colSpan={4} className='text-center fw-bold'>
-                                <img
-                                  style={{
-                                    height: '60px',
-                                    display: 'block',
-                                    marginLeft: '20px',
-                                  }}
-                                  src={httLogo}
-                                  alt='the Logo'
-                                ></img>
-                                <span className='text-danger'> Baundule </span>{' '}
-                                <br />
-                                The finest Tour Management Group of BD <br />
-                                <span className='text-primary'>
-                                  Date: {new Date().toDateString()}
-                                </span>
-                              </th>
-                            </tr>
-                            <tr>
-                              <th
-                                colSpan={4}
-                                className='d-flex justify-content-center'
-                              >
-                                <span className='text-info fw-bold'>
-                                  Invoice for{' '}
-                                  <span className='text-danger'>
-                                    {order.title}
-                                  </span>
-                                </span>
-                              </th>
-                              <th
-                                colSpan={4}
-                                className='d-flex justify-content-center m-2'
-                              >
-                                <span className='text-info fw-bold'>
-                                  Invoice Number{' '}
-                                  <span className='text-danger'>
-                                    {order._id}
-                                  </span>
-                                </span>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td
-                                colSpan={4}
-                                className='d-flex justify-content-end me-2'
-                              >
-                                <span className='fw-bold'>
-                                  Invoice to: {order.name}
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                colSpan={4}
-                                className='d-flex justify-content-end me-2'
-                              >
-                                <span className='fw-bold'>
-                                  Email: {order.email}
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                colSpan={4}
-                                className='d-flex justify-content-end me-2'
-                              >
-                                <span className='fw-bold'>
-                                  Address: {order.address}
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                colSpan={4}
-                                className='d-flex justify-content-end me-2'
-                              >
-                                <span className='fw-bold'>
-                                  Phone: {order.phone}
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                colSpan={4}
-                                className='d-flex justify-content-end me-2'
-                              >
-                                <span className='fw-bold'>
-                                  Order Date: {order.orderDate}
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                colSpan={4}
-                                className='d-flex justify-content-end me-2'
-                              >
-                                <span className='fw-bold'>
-                                  Package Cost: {order.price} Taka
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                colSpan={4}
-                                className='d-flex justify-content-end me-2'
-                              >
-                                <span className='fw-bold text-warning'>
-                                  Discount: {order.discount} %
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                colSpan={4}
-                                className='d-flex justify-content-end me-2'
-                              >
-                                <span className='fw-bold text-success'>
-                                  Final Cost :{' '}
-                                  {Math.round(
-                                    parseInt(order?.price) -
-                                      parseInt(order?.price) *
-                                        (parseInt(order?.discount) / 100)
-                                  )}
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                colSpan={4}
-                                className='d-flex justify-content-end me-2'
-                              >
-                                <span className='fw-bold text-warning'>
-                                  Payment Method: Stripe Card
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                colSpan={4}
-                                className='d-flex justify-content-end me-2'
-                              >
-                                <span className='fw-bold text-warning'>
-                                  Last Four Digit of the Card:{' '}
-                                  {order?.payment?.last4}
-                                </span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td
-                                colSpan={4}
-                                className='d-flex justify-content-end me-2'
-                              >
-                                <span className='fw-bold text-danger'>
-                                  Payment Amount: {order?.payment?.amount / 100}
-                                </span>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </Table>
+                        <div class='container' ref={invoiceRef}>
+                          <div class='row pt-5'>
+                            <div class='col-12'>
+                              <div class='card'>
+                                <div class='card-body p-0'>
+                                  <div class='row px-5 pb-2 pt-4'>
+                                    <div class='col-6'>
+                                      <img
+                                        style={{
+                                          height: '120px',
+                                          display: 'block',
+                                          marginLeft: '20px',
+                                        }}
+                                        src={httLogo}
+                                        alt='the Logo'
+                                      />
+                                      <span className='ms-2'>
+                                        Baundule Travellers
+                                      </span>
+                                    </div>
+                                    <div class='col-6 text-end mt-3'>
+                                      <p class='font-weight-bold mb-1'>
+                                        Invoice{' '}
+                                        <span className='text-bold'>
+                                          #{order._id}
+                                        </span>
+                                      </p>
+                                      <p class='text-muted'>
+                                        Issue Date: {todayDate}
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <hr class='my-2' />
+                                  <div class='row pb-5 p-5'>
+                                    <div class='col-6'>
+                                      <p class='font-weight-bold mb-4'>
+                                        Client Information
+                                      </p>
+                                      <p class='mb-1'>{order.name}</p>
+                                      <p>{order.address}</p>
+                                      <p class='mb-1'>{order.phone}</p>
+                                      <p class='mb-1'>{order.email}</p>
+                                    </div>
+                                    <div class='col-6 text-end'>
+                                      <p class='font-weight-bold mb-4'>
+                                        Payment Details
+                                      </p>
+                                      <p class='mb-1'>
+                                        <span class='text-muted'>Method: </span>{' '}
+                                        Stripe Card
+                                      </p>
+                                      <p class='mb-1'>
+                                        <span class='text-muted'>
+                                          Last Four Digit:{' '}
+                                        </span>{' '}
+                                        {order?.payment?.last4}
+                                      </p>
+                                      <p class='mb-1'>
+                                        <span class='text-muted'>
+                                          Payment Type:{' '}
+                                        </span>{' '}
+                                        Card
+                                      </p>
+                                      <p class='mb-1'>
+                                        <span class='text-muted'>Name: </span>{' '}
+                                        {order.name}
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                  <div class='row'>
+                                    <div class='col-12 p-5'>
+                                      <table class='table'>
+                                        <thead>
+                                          <tr>
+                                            <th class='border-0 text-uppercase small font-weight-bold'>
+                                              ID
+                                            </th>
+                                            <th class='border-0 text-uppercase small font-weight-bold'>
+                                              Package Name
+                                            </th>
+                                            <th class='border-0 text-uppercase small font-weight-bold'>
+                                              Tour Destination & Date
+                                            </th>
+                                            <th class='border-0 text-uppercase small font-weight-bold'>
+                                              Base Cost
+                                            </th>
+                                            <th class='border-0 text-uppercase small font-weight-bold'>
+                                              Discount
+                                            </th>
+                                            <th class='border-0 text-uppercase small font-weight-bold'>
+                                              Total
+                                            </th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>1</td>
+                                            <td>{order.title}</td>
+                                            <td>
+                                              {order.destination} <br />{' '}
+                                              {order.tour_date}
+                                            </td>
+                                            <td>{order.price} TK</td>
+                                            <td>{order.discount} %</td>
+                                            <td>
+                                              {Math.round(
+                                                parseInt(order?.price) -
+                                                  parseInt(order?.price) *
+                                                    (parseInt(order?.discount) /
+                                                      100)
+                                              )}
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+
+                                  <div class='d-flex flex-row-reverse bg-dark text-white p-4'>
+                                    <div class='py-3 px-5 text-end'>
+                                      <div class='mb-2'>Grand Total</div>
+                                      <div class='h2 font-weight-light'>
+                                        {Math.round(
+                                          parseInt(order?.price) -
+                                            parseInt(order?.price) *
+                                              (parseInt(order?.discount) / 100)
+                                        )}{' '}
+                                        <span> Taka</span>
+                                      </div>
+                                    </div>
+
+                                    <div class='py-3 px-5 text-end'>
+                                      <div class='mb-2'>Discount</div>
+                                      <div class='h2 font-weight-light'>
+                                        {order?.discount}%
+                                      </div>
+                                    </div>
+
+                                    <div class='py-3 px-5 text-end'>
+                                      <div class='mb-2'>Base Price</div>
+                                      <div class='h2 font-weight-light'>
+                                        {order?.price} Taka
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class='text-light mt-5 mb-5 text-center small'>
+                            by :{' '}
+                            <a class='text-light' target='_blank' href=''>
+                              baundule.com
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </td>
                     {/* <td>
