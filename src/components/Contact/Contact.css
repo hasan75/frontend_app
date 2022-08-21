@@ -45,7 +45,7 @@
   
   .info-wrap {
     color: rgba(255, 255, 255, 0.8);
-    background-color: #38b6ff;
+    background-color: #f3854d;
     margin: 10px;
     border-radius: 12px;
   }
@@ -83,11 +83,19 @@
   .info-wrap .dbox .text {
     width: calc(100% - 50px);
   }
-  
+  /* #38b6ff */
   .contactLabel {
-    color: #38b6ff !important;
+    color: #FF5501 !important;
     font-weight: 500;
   }
+
+  .btn-tomato{
+    background-color: #FF5501;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+  }
+
   .radioLabel {
     font-weight: 700 !important;
   }

@@ -28,7 +28,7 @@ const Contact = () => {
               <div className='row g-0'>
                 <div className='col-lg-8 col-md-7 order-md-last d-flex align-items-stretch '>
                   <div className='contact-wrap w-100 p-md-5 p-4 columContact'>
-                    <h3 className='mb-4'>Get in touch</h3>
+                    <h3 className='mb-4 touchText'>Get in touch</h3>
                     <form
                       id='contactForm'
                       name='contactForm'
@@ -165,7 +165,7 @@ const Contact = () => {
                             <input
                               type='submit'
                               value='Send Message'
-                              className='btn btn-info mt-4'
+                              className='btn btn-tomato mt-4'
                             />
                           </div>
                         </div>
@@ -217,6 +217,28 @@ const Contact = () => {
                         </p>
                       </div>
                     </div>
+                    <ul className='social-icons d-flex align-item-center justify-content-center mt-2'>
+                      <li>
+                        <a href='/home'>
+                          <i className='fab fa-youtube'></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href='/home'>
+                          <i className='fab fa-facebook-square'></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href='/home'>
+                          <i className='fab fa-instagram'></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href='/home'>
+                          <i className='fab fa-twitter-square'></i>
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
