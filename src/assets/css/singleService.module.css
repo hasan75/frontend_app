@@ -29,3 +29,45 @@
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
   border-radius: 10px;
 }
+.textOrange > h5{
+  color: #FF5501 !important;
+}
+.textDetail{
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: 'DynaPuff', cursive;
+}
+.serviceInfo{
+  /* background-color: whitesmoke; */
+  height: 150px;
+  background-color: #f37536;
+  padding: 10px;
+  border-radius: 7px;
+  /* border: 1px solid rgb(239, 238, 238); */
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+  rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+.serviceInfo > h6{
+  color: white;
+}
+.serviceInfo:hover{
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+  rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  /* background-color: white; */
+  border: 1px solid rgb(217, 214, 214);
+}
+
+.details{
+  position: relative;
+  top: -70px;
+}
+
+/* .thumbs{
+  width: 40px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid green;
+} */

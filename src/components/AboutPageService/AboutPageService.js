@@ -7,7 +7,7 @@ import customize from '../../assets/images/about/customize.png';
 
 const AboutPageService = () => {
   return (
-    <div className='mb-5'>
+    <div className='mb-5 pb-5'>
       <div className='services py-4 my-2'>
         <h4 className='text-center text-uppercase'>We Offer Best Services</h4>
       </div>

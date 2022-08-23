@@ -61,15 +61,15 @@ const Products = () => {
         <Container className='mb-5'>
           <Fade top cascade>
             <h2 className='text-center text-uppercase mt-5 mb-4 feature'>
-              Popular Packages
+              Tour Packages
             </h2>
             <p
               style={{ maxWidth: '650px' }}
               className='text-center mx-auto mt-3'
             >
               {' '}
-              A superb collection of great and comfortable items of foods &
-              other household items to make your life much easier.
+              Baundule Travellers, trusted by thousands of travellers and people
+              around the country tries it's best to be with you, to assist you.
             </p>
           </Fade>
           <div className={`${servicesStyle.searchContainer} my-2`}>

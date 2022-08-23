@@ -1,4 +1,5 @@
 import { Button } from 'bootstrap';
+import '../assets/css/singleProduct.css';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
@@ -13,6 +14,15 @@ import Rating from 'react-rating';
 import SingleReviews from '../components/SingleReviews';
 import { useLocation } from 'react-router-dom';
 import useBookings from '../hooks/useBookings';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faArrowPointer,
+  faCircleCheck,
+  faCircleXmark,
+  faRectangleXmark,
+  faThumbsUp,
+  faTriangleExclamation,
+} from '@fortawesome/free-solid-svg-icons';
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -104,124 +114,135 @@ const SingleProduct = () => {
 
   return (
     <div className='container my-2 py-2'>
-      <h1 className='py-3 text-center text-dark'>
-        Tour Package Details of{' '}
-        <span className='text-warning'>{service?.title}</span>
+      <h1 className='py-3 text-secondary fw-bold'>
+        <span>{service?.title}</span>
       </h1>
-      <section className=' px-5 mx-3 my-3 rounded'>
-        <div className='row g-1'>
-          <div className='col-lg-8'>
-            <div className='pb-2'>
-              <img
-                src={service?.img}
-                alt='sundarban_img'
-                className={`${singleServiceStyle.singlePicture} img-fluid`}
-              />
+      <div
+        className={`${singleServiceStyle.textOrange} d-flex align-items-center `}
+      >
+        <h5 className='me-3'>{service?.destination}</h5>
+        <h5 className='ms-2 me-3'>{service?.tour_date}</h5>
+        <h5 className='ms-2'>{service?.start_time} PM</h5>
+      </div>
+      <section className='tourImage mt-3'>
+        <img
+          src={service?.img}
+          alt='sundarban_img'
+          className={`${singleServiceStyle.singlePicture} img-fluid w-100`}
+        />
+        <div className={`${singleServiceStyle.details} row mx-2`}>
+          <div className='col-2'>
+            <div
+              className={`${singleServiceStyle.serviceInfo} d-flex align-items-center justify-content-center flex-column`}
+            >
+              <h6 className=''>Available Seats</h6>
+              <h6 className={`${singleServiceStyle.textDetail}`}>
+                {availableSeats}
+              </h6>
             </div>
           </div>
-          <div className='col-lg-4'>
+          <div className='col-2'>
             <div
-              className={`${singleServiceStyle.extraInfo} h-100 text-start ms-3`}
+              className={`${singleServiceStyle.serviceInfo} d-flex align-items-center justify-content-center flex-column`}
             >
-              <div className={`${singleServiceStyle.extraInfoText}`}>
-                <h4 className='text-secondary fw-bold text-center'>
-                  Key Infos
-                </h4>
-              </div>
-              <div className='ps-3'>
-                <span
-                  className={`${singleServiceStyle.infoText} my-2 mx-2 text-secondary`}
-                >
-                  Destination:{' '}
-                  <span className='fw-bold'>{service?.destination}</span>
-                </span>
-                <span
-                  className={`${singleServiceStyle.infoText} my-2 text-secondary mx-2`}
-                >
-                  Journey From: <span className='fw-bold'>{service?.from}</span>
-                </span>
-                <span
-                  className={`${singleServiceStyle.infoText} my-2 text-secondary mx-2`}
-                >
-                  Journey Date:{' '}
-                  <span className='fw-bold'>{service?.tour_date}</span>
-                </span>
-                <span
-                  className={`${singleServiceStyle.infoText} my-2 text-secondary mx-2`}
-                >
-                  Reporting Time:{' '}
-                  <span className='fw-bold'>{service?.start_time}</span>
-                </span>
-                <span
-                  className={`${singleServiceStyle.infoText} my-2 text-secondary mx-2`}
-                >
-                  Return Date:{' '}
-                  <span className='fw-bold'>{service?.return_date}</span>
-                </span>
-                <span
-                  className={`${singleServiceStyle.infoText} my-2 text-secondary mx-2`}
-                >
-                  Estimated Cost:{' '}
-                  <span className='fw-bold text-danger '>{service?.price}</span>
-                </span>
-                <span
-                  className={`${singleServiceStyle.infoText} my-2 text-secondary mx-2`}
-                >
-                  Discount Available:{' '}
-                  <span className='fw-bold text-danger'>
-                    {service?.discount} %
-                  </span>
-                </span>
-                <span
-                  className={`${singleServiceStyle.infoText} my-2 text-secondary mx-2`}
-                >
-                  Discount Price:{' '}
-                  <span className='fw-bold text-success'>{discoutPrice}</span>
-                </span>
-                <span
-                  className={`${singleServiceStyle.infoText} my-2 text-secondary mx-2`}
-                >
-                  Package Capacity:{' '}
-                  <span className='fw-bold text-success'>
-                    {service?.member}
-                  </span>
-                </span>
-                <span
-                  className={`${singleServiceStyle.infoText} my-2 text-secondary mx-2`}
-                >
-                  Available seats:{' '}
-                  <span className='fw-bold text-success'>{availableSeats}</span>
-                </span>
-              </div>
+              <h6 className=''>Event Date</h6>
+              <h6 className={`${singleServiceStyle.textDetail}`}>
+                {service?.tour_date}
+              </h6>
+            </div>
+          </div>
+          <div className='col-2'>
+            <div
+              className={`${singleServiceStyle.serviceInfo} d-flex align-items-center justify-content-center flex-column`}
+            >
+              <h6 className=''>Regular Price</h6>
+              <h6 className={`${singleServiceStyle.textDetail}`}>
+                {service?.price}
+              </h6>
+            </div>
+          </div>
+          <div className='col-2'>
+            <div
+              className={`${singleServiceStyle.serviceInfo} d-flex align-items-center justify-content-center flex-column`}
+            >
+              <h6 className=''>Discount</h6>
+              <h6 className={`${singleServiceStyle.textDetail}`}>
+                {service?.discount} %
+              </h6>
+            </div>
+          </div>
+          <div className='col-2'>
+            <div
+              className={`${singleServiceStyle.serviceInfo} d-flex align-items-center justify-content-center flex-column`}
+            >
+              <h6 className=''>Final Cost</h6>
+              <h6 className={`${singleServiceStyle.textDetail}`}>
+                {discoutPrice}
+              </h6>
+            </div>
+          </div>
+          <div className='col-2'>
+            <div
+              className={`${singleServiceStyle.serviceInfo} d-flex align-items-center justify-content-center flex-column`}
+            >
+              <h6 className=''>Tour Members</h6>
+              <h6 className={`${singleServiceStyle.textDetail}`}>
+                {service?.member}
+              </h6>
             </div>
           </div>
         </div>
+      </section>
+      <section className=' px-5 mx-3 my-3 rounded'>
         <div className='row'>
           <div className='col-md-6 my-4'>
             <div className={`${singleServiceStyle.tourDetails}`}>
               <h4 className='text-start text-success fw-bold'>Tour Details</h4>
               <p className='fw-bold'>{service?.desc}</p>
-              <h5 className='text-warning fw-bold my-2 pt-3'>
+              <h5 className='text-secondary fw-bold my-2 pt-3'>
                 Read the points below before you book your package
               </h5>
               <ul className='list-group my-2 py-3'>
-                <li className='list-group-item'>
-                  Every Tour consists of minimum 15 people, so you have to be
-                  with a group
+                <li className='list-group-item d-flex'>
+                  <span className='text-success me-2'>
+                    <FontAwesomeIcon icon={faCircleCheck} size='xl' />
+                  </span>{' '}
+                  <span>
+                    Every Tour consists of minimum 15 people, so you have to be
+                    with a group
+                  </span>
                 </li>
-                <li className='list-group-item'>
-                  No Extra Costs like snacks, cigarette, extra food, extra guide
-                  will be beared by host.
+                <li className='list-group-item d-flex'>
+                  <span className='text-success me-2'>
+                    <FontAwesomeIcon icon={faCircleCheck} size='xl' />
+                  </span>
+                  <span>
+                    No Extra Costs like snacks, cigarette, extra food, extra
+                    guide will be beared by host.
+                  </span>
                 </li>
-                <li className='list-group-item'>
-                  Members have to listen to the host's call
+                <li className='list-group-item d-flex'>
+                  <span className='text-success me-2'>
+                    <FontAwesomeIcon icon={faCircleCheck} size='xl' />
+                  </span>
+                  <span>Members have to listen to the host's dicision</span>
                 </li>
-                <li className='list-group-item text-danger'>
-                  No alcohol is allowed in the tour.
+                <li className='list-group-item d-flex'>
+                  <span className='text-success me-2'>
+                    <FontAwesomeIcon icon={faCircleCheck} size='xl' />
+                  </span>
+                  <span>
+                    Your guide or host won't be the person which will carry your
+                    belongings.
+                  </span>
                 </li>
-                <li className='list-group-item'>
-                  Your guide or host won't be the person which will carry your
-                  belongings.
+                <li className='list-group-item d-flex'>
+                  <span className='text-danger me-2'>
+                    <FontAwesomeIcon icon={faCircleXmark} size='xl' />
+                  </span>
+                  <span>
+                    Drugs, Alcohol, Any kind of deadly weapons like guns, knife.
+                  </span>
                 </li>
               </ul>
             </div>
@@ -237,41 +258,101 @@ const SingleProduct = () => {
                 Bakar Siddique, owner of Baundule.
               </p>
               <ul className='list-group my-2 py-3'>
-                <li className='list-group-item'>
-                  The #1 benefit of using Baundule when it comes to booking your
-                  family travel is because travel is our expertise.
+                <li className='list-group-item d-flex'>
+                  <span className={`${singleServiceStyle.thumbs} text-success`}>
+                    <FontAwesomeIcon icon={faThumbsUp} size='xl' />
+                  </span>
+                  <span className='ms-2'>
+                    The #1 benefit of using Baundule when it comes to booking
+                    your family travel is because travel is our expertise.
+                  </span>
                 </li>
-                <li className='list-group-item'>
-                  We, the hosts of Baundule have the greatest Destination
-                  knowledge.
+                <li className='list-group-item d-flex'>
+                  <span className={`${singleServiceStyle.thumbs} text-success`}>
+                    <FontAwesomeIcon icon={faThumbsUp} size='xl' />
+                  </span>
+                  <span className='ms-2'>
+                    We, the hosts of Baundule have the greatest Destination
+                    knowledge.
+                  </span>
                 </li>
-                <li className='list-group-item'>
-                  that travelers do not pay more for vacations because Hit The
-                  Trail is always with you.
+                <li className='list-group-item d-flex'>
+                  <span className={`${singleServiceStyle.thumbs} text-success`}>
+                    <FontAwesomeIcon icon={faThumbsUp} size='xl' />
+                  </span>
+                  <span className='ms-2'>
+                    that travelers do not pay more for vacations because
+                    Baundule is always with you.
+                  </span>
                 </li>
-                <li className='list-group-item'>
-                  The relationship you’ll form with your Baundule host, as well
-                  as their relationships with other hosts, are two of the
-                  benefits of using Baundule as your travel partner.
+                <li className='list-group-item d-flex'>
+                  <span className={`${singleServiceStyle.thumbs} text-success`}>
+                    <FontAwesomeIcon icon={faThumbsUp} size='xl' />
+                  </span>
+                  <span className='ms-2'>
+                    The relationship you’ll form with your Baundule host, as
+                    well as their relationships with other hosts, are two of the
+                    benefits of using Baundule as your travel partner.
+                  </span>
                 </li>
-                <li className='list-group-item'>
-                  Our Hosts will be the best assistance to you in your trip.
-                  They will assist you anywhere, anyhow!! That's the main
-                  advantage if you get the service of Baundule
+                <li className='list-group-item d-flex'>
+                  <span className={`${singleServiceStyle.thumbs} text-success`}>
+                    <FontAwesomeIcon icon={faThumbsUp} size='xl' />
+                  </span>
+                  <span className='ms-2'>
+                    Our Hosts will be the best assistance to you in your trip.
+                    They will assist you anywhere, anyhow!
+                  </span>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </section>
+      {/* book button  */}
       <div className='my-3 text-center'>
+        {pastEvent ? (
+          <>
+            <div className='textAreaForMessage'>
+              <div className='d-flex align-items-center justify-content-center flex-column'>
+                <span className='text-danger'>
+                  <FontAwesomeIcon icon={faTriangleExclamation} size='4x' />
+                </span>
+                <h4 className='text-danger'>
+                  Sorry, This Event is a past event
+                </h4>
+              </div>
+            </div>
+          </>
+        ) : availableSeats < 1 ? (
+          <>
+            <div className='textAreaForMessage'>
+              <div className='d-flex align-items-center justify-content-center flex-column'>
+                <span className='text-danger'>
+                  <FontAwesomeIcon icon={faTriangleExclamation} size='4x' />
+                </span>
+                <h4 className='text-danger'>
+                  Sorry, No Seats Available in this event!
+                </h4>
+              </div>
+            </div>
+          </>
+        ) : (
+          ''
+        )}
         {pastEvent || availableSeats < 1 ? (
-          <button className='btn btn-outline-success' disabled>
+          <button className='btn btn-secondary opacity-25 bookButton' disabled>
+            <span className='me-2 text-danger'>
+              <FontAwesomeIcon icon={faRectangleXmark} size='xl' />
+            </span>
             Book Your Package
           </button>
         ) : (
           <Link to={`/placeorder/${id}`}>
-            <button className='btn btn-outline-success'>
+            <button className='btn btn-success bookButton'>
+              <span className='me-2'>
+                <FontAwesomeIcon icon={faArrowPointer} size='xl' />
+              </span>
               Book Your Package
             </button>
           </Link>
@@ -345,9 +426,36 @@ const SingleProduct = () => {
             </Row>
             <div className='mt-4'>
               {matchedReviewbyIdandEmail ? (
-                <span className='fw-bold text-danger'>
-                  You have already given a review about this package
-                </span>
+                // <span className='fw-bold text-danger'>
+                //   You have already given a review about this package
+                // </span>
+                <>
+                  <div className='textAreaForMessage'>
+                    <div className='d-flex align-items-center justify-content-center flex-column'>
+                      <span className='text-warning'>
+                        <FontAwesomeIcon
+                          icon={faTriangleExclamation}
+                          size='4x'
+                        />
+                      </span>
+                      <h4 className='text-danger'>
+                        You have already given a review about this event.
+                      </h4>
+                    </div>
+                  </div>
+
+                  <button
+                    type='submit'
+                    className='btn btn-secondary'
+                    disabled
+                    style={{ padding: '.6rem 2rem' }}
+                  >
+                    <span className='text-danger me-2'>
+                      <FontAwesomeIcon icon={faTriangleExclamation} size='xl' />
+                    </span>{' '}
+                    Submit
+                  </button>
+                </>
               ) : (
                 <button
                   type='submit'
