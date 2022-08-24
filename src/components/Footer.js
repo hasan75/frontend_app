@@ -20,7 +20,7 @@ const Footer = () => {
                     className='form-control rounded-0'
                     type='text'
                   />
-                  <button className='btn rounded-0 btn-primary'>Subs</button>
+                  <button className='btn rounded-0 btn-success'>Subs</button>
                 </form>
                 <h5 className='text-muted mt-4'>Follow us on</h5>
                 <div>

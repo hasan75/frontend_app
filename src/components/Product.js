@@ -170,7 +170,7 @@ const Product = ({ product }) => {
               {rating} ({totalReview}2)
             </Card.Text>
             <Link to={`products/${_id}`}>
-              <button className='mt-2 btn btn-outline-info me-5'>
+              <button className={`${productStyle.detailBooking} mt-2 me-5`}>
                 See Details
               </button>
             </Link>
@@ -180,9 +180,7 @@ const Product = ({ product }) => {
               </button>
             ) : (
               <Link to={`/placeorder/${_id}`}>
-                <button className='mt-2 btn btn-outline-success'>
-                  Book Now
-                </button>
+                <button className='mt-2 btn btn-success'>Book Now</button>
               </Link>
             )}
           </Card.Body>
